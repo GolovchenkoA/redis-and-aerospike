@@ -1,0 +1,15 @@
+version: '2'
+services:
+
+  aerospike:
+    image: aerospike
+    volumes:
+      - ./docker/aerospike:/opt/aerospike/etc
+    command: [ "asd","--foreground","--config-file","/opt/aerospike/etc/aerospike.conf"]
+    ports:
+      - "3000:3000"
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6380:6379"
