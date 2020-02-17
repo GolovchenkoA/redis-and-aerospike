@@ -1,6 +1,6 @@
-##Records migration from redis to aerospike
+## Records migration from redis to aerospike
 
-###How to run: 
+### How to run: 
 ```
 docker-compose up -d
 ./gradlew jar
