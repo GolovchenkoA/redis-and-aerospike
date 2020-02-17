@@ -48,7 +48,7 @@ public class Main {
     private static int REDIS_PORT = 6380;
 
     private static String AEROSPIKE_HOST = "127.0.0.1";
-    private static int AEROSPIKE_PORT = 3000;
+    private static int AEROSPIKE_PORT = 33000;
 
     private static WritePolicy writePolicy;
     private static DataGenerator dataGenerator = new DataGenerator();

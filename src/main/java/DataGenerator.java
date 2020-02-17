@@ -58,7 +58,7 @@ public class DataGenerator {
     }
 
     private void writeKey(Jedis jedis, String key, String value) {
-        System.out.println(key);
+        //System.out.println(key);
         jedis.setnx(key, value);
     }
 

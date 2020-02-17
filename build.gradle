@@ -16,3 +16,22 @@ dependencies {
     compile group: 'redis.clients', name: 'jedis', version: '3.2.0'
     compile group: 'com.aerospike', name: 'aerospike-client', version: '4.4.9'
 }
+
+
+allprojects {
+    gradle.projectsEvaluated {
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+        }
+    }
+}
+
+jar {
+    manifest {
+        attributes "Main-Class": "Main"
+    }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
